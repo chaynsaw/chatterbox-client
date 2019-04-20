@@ -13,6 +13,7 @@ var App = {
 
     // Fetch initial batch of messages
     App.startSpinner();
+    // debugger;
     App.fetch(App.stopSpinner);
 
   },
@@ -20,11 +21,11 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      for (let key of data.results) {
-        MessagesView.renderMessage(key);
-      }
       console.log(data);
 
+      Messages.storedMessages = data; // saves data from parse call
+      debugger; 
+      MessagesView.renderMessages(); // needs to render the message stream once Parse has returned data
       callback();
     });
   },
