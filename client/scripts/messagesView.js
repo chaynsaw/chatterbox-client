@@ -6,6 +6,10 @@ var MessagesView = {
   },
 
   render: function() {
+  },
+  // I object, O 
+  renderMessage: function(message) {
+    $('#chats').append(MessageView.render(message))
   }
 
 };
