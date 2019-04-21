@@ -4,6 +4,8 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
+  
+
   },
 
   render: function(message) {
