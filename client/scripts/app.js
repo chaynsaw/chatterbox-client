@@ -15,7 +15,7 @@ var App = {
     App.startSpinner();
     // debugger;
     App.fetch(App.stopSpinner);
-    //App.fetch(App.startSessionTime);
+    App.fetch(App.startSessionTime);
   },
   
   fetch: function(callback = ()=>{}) {
