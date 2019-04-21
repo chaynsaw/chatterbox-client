@@ -15,8 +15,7 @@ var App = {
     App.startSpinner();
     // debugger;
     App.fetch(App.stopSpinner);
-    
-    
+    //App.fetch(App.startSessionTime);
   },
   
   fetch: function(callback = ()=>{}) {
@@ -26,6 +25,7 @@ var App = {
       
       Messages.storedMessages = data; // saves data from parse call
       // debugger; 
+      $('.chat').detach(); // detach all previous posts before reloading
       MessagesView.renderMessage(); // needs to render the message stream once Parse has returned data
       callback();
     });
@@ -49,8 +49,8 @@ var App = {
   },
 
   startSessionTime: function() {
-    setTimeout(App.startSessionTime, 5000);
-    App.sessionTime += 5;
+    setTimeout(App.startSessionTime, 1000);
+    App.sessionTime += 1;
     App.fetch();
     console.log(App.sessionTime);
   },

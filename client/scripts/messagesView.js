@@ -19,7 +19,7 @@ var MessagesView = {
   renderMessage: function() { // calls the MessageView.render method on each message
     if (arguments[0]) {
       let currentMessage = this.render(arguments[0]);
-      $('#chats').append(curr);
+      $('#chats').append(currentMessage);
     } else {
       for (let i = Messages.storedMessages.results.length - 1; i > 0; i--) { // loop through storedMessages
         let currentMessage = Messages.storedMessages.results[i];
@@ -36,11 +36,3 @@ var MessagesView = {
   }
   
 };
-
-/*
-App.fetch();
-    // $('.username').on('click', function(element)) {
-    //   var username = $(element).html().innerHTML;
-    //   Friends.friendsList.push(username);
-    // }
-*/
